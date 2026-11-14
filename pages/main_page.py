@@ -22,17 +22,17 @@ class MainPage(BasePage):
 
     @allure.step('Нажать на вопрос №{index} в разделе «Вопросы о важном»')
     def click_faq_question(self, index):
-        locator = MainPageLocators.faq_question(index)
+        locator = self.format_locator(MainPageLocators.FAQ_QUESTION, index)
         self.scroll_to(locator)
         self.click(locator)
 
     @allure.step('Получить текст ответа на вопрос №{index}')
     def get_faq_answer(self, index):
-        return self.get_text(MainPageLocators.faq_answer(index))
+        return self.get_text(self.format_locator(MainPageLocators.FAQ_ANSWER, index))
 
     @allure.step('Получить текст вопроса №{index}')
     def get_faq_question(self, index):
-        return self.get_text(MainPageLocators.faq_question(index))
+        return self.get_text(self.format_locator(MainPageLocators.FAQ_QUESTION, index))
 
     @allure.step('Нажать кнопку «Заказать» ({position})')
     def click_order_button(self, position):

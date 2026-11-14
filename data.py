@@ -1,10 +1,3 @@
-from datetime import date, timedelta
-
-
-def _future_date(days):
-    return (date.today() + timedelta(days=days)).strftime('%d.%m.%Y')
-
-
 FAQ = [
     (0, 'Сколько это стоит? И как оплатить?',
      'Сутки — 400 рублей. Оплата курьеру — наличными или картой.'),
@@ -35,7 +28,7 @@ ORDER_DATA = [
         'address': 'Москва, ул. Ленина, 1',
         'metro': 'Сокольники',
         'phone': '+79991234567',
-        'date': _future_date(1),
+        'delivery_in_days': 1,
         'rental_period': 'сутки',
         'color': 'black',
         'comment': 'Позвоните за час',
@@ -46,7 +39,7 @@ ORDER_DATA = [
         'address': 'Москва, Тверская, 10',
         'metro': 'Черкизовская',
         'phone': '89161234567',
-        'date': _future_date(5),
+        'delivery_in_days': 5,
         'rental_period': 'семеро суток',
         'color': 'grey',
         'comment': 'Домофон не работает',
